@@ -9,12 +9,15 @@ hbs.registerPartials(__dirname + '/views/partials');
 app.set('view engine', 'hbs');
 
 app.get('/', (req, res) => {
-
     res.render('home',{
         nome: 'Rodrigo',
         ano: new Date().getFullYear()
     });
-
+});
+app.get('/about', (req, res) => {
+    res.render('about',{
+        ano: new Date().getFullYear()
+    });
 });
 
 app.listen(3000, () => {
