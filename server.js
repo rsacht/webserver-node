@@ -8,16 +8,19 @@ app.use(express.static(__dirname + '/public'));
 hbs.registerPartials(__dirname + '/views/partials');
 app.set('view engine', 'hbs');
 
+//Helpers
+hbs.registerHelper('getAno',() => {
+    return new Date().getFullYear();
+});
+
+//Rotas
 app.get('/', (req, res) => {
     res.render('home',{
         nome: 'Rodrigo',
-        ano: new Date().getFullYear()
     });
 });
 app.get('/about', (req, res) => {
-    res.render('about',{
-        ano: new Date().getFullYear()
-    });
+    res.render('about');
 });
 
 app.listen(3000, () => {
