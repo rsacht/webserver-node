@@ -3,18 +3,22 @@ const app = express()
 
 app.use(express.static(__dirname + '/public'));
 
-app.get('/', (req, res) => {
-  //res.send('Olá Mundo!')
-   let saida = {
-        nome: 'Rodrigo',
-        idade: 35,
-        url: req.url
-    }
+//Express HBS engine 
+//Mais informações em: https://www.npmjs.com/package/hbs
+app.set('view engine', 'hbs');
 
-    res.send(saida);
-    //Observe agora o Headers no Postman que a saída é JSON
-    //e X-Powered-By-> Express
-})
+// app.get('/', (req, res) => {
+//   //res.send('Olá Mundo!')
+//    let saida = {
+//         nome: 'Rodrigo',
+//         idade: 35,
+//         url: req.url
+//     }
+
+//     res.send(saida);
+//     //Observe agora o Headers no Postman que a saída é JSON
+//     //e X-Powered-By-> Express
+// });
 //Starte o server.js: nodemon server.js
 
 //Configurando a mensagem de retorno ao subir o servidor:
