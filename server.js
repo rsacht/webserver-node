@@ -25,7 +25,7 @@ hbs.registerHelper('capitalizar',(texto) => {
 //Rotas
 app.get('/', (req, res) => {
     res.render('home',{
-        nome: 'Rodrigo',
+        nome: 'suElEn',
     });
 });
 app.get('/about', (req, res) => {
