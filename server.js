@@ -1,6 +1,8 @@
 const express = require('express')
 const app = express()
- 
+
+app.use(express.static(__dirname + '/public'));
+
 app.get('/', (req, res) => {
   //res.send('Olá Mundo!')
    let saida = {
@@ -16,7 +18,6 @@ app.get('/', (req, res) => {
 //Starte o server.js: nodemon server.js
 
 //Configurando a mensagem de retorno ao subir o servidor:
-//Configurando a mensagem de retorno ao estartar o servidor:
 app.listen(3000, () => {
     console.log('Escutando requisições na porta 3000. Acesse: http://localhost:3000/')
 });
