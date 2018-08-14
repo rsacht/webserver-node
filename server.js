@@ -3,6 +3,8 @@ const app = express();
 const hbs = require('hbs');
 require('./hbs/helpers');
 
+const port = process.env.PORT || 3000;
+
 app.use(express.static(__dirname + '/public'));
 
 //Express HBS engine 
@@ -19,6 +21,6 @@ app.get('/about', (req, res) => {
     res.render('about');
 });
 
-app.listen(3000, () => {
-    console.log('Escutando requisições na porta 3000. Acesse: http://localhost:3000/')
+app.listen(port, () => {
+    console.log(`Escutando requisições na porta ${port}. Acesse: http://localhost:${port}/`)
 });
